@@ -8,10 +8,11 @@ namespace Entities.Concrete
     public class Product : IEntity
     {
         public int Id { get; set; }
+        public string CarName { get; set; }
         public int BrandId { get; set; }
         public int ColourId { get; set; }
-        public int ModelYear { get; set; }
-        public double DailyPrice { get; set; }
+        public string ModelYear { get; set; }
+        public decimal DailyPrice { get; set; }
         public string Description { get; set; }
 
     }

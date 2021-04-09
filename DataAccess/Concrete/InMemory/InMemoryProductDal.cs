@@ -14,12 +14,13 @@ namespace DataAccess.Concrete.InMemory
         {
             _products = new List<Product> 
             {  
-               new Product {Id=1,BrandId=1,ColourId=2,ModelYear=2015,DailyPrice=238.000,Description="GOLF 7 DSG DİZEL HİGHLİNE "},
-               new Product {Id=2,BrandId=1,ColourId=1,ModelYear=2016,DailyPrice=342.750 ,Description="2016 TIGUAN 1.4TSI HIGHLINE HAYALET DSG CM "},
-               new Product {Id=3,BrandId=2,ColourId=5,ModelYear=2019,DailyPrice=540.000 ,Description=" A4 45 TFSI quattro"},
-               new Product {Id=4,BrandId=3,ColourId=6,ModelYear=2015,DailyPrice=690.000 ,Description="TESLA MODEL S P85D"},
-               new Product {Id=5,BrandId=4,ColourId=1,ModelYear=2018,DailyPrice=332.900 ,Description="VOLVO V40 1.5 T3 INSCRIPTION GEARTRONIC"},
-               new Product {Id=6,BrandId=4,ColourId=3,ModelYear=2011,DailyPrice=199.000 ,Description="316i Comfort Plus /Sunroof / Xenon / Deri / LPG"}
+              new Product{Id=1,CarName="Volvo V40",BrandId=1,ColourId=1,ModelYear="2015",DailyPrice=350,Description="Beyaz Volvo V40 2015 model"},
+              new Product{Id=2,CarName="VW Jetta",BrandId=2,ColourId=1,ModelYear="2016",DailyPrice=250,Description="VW 2016 Model Beyaz Jetta"},
+              new Product{Id=3,CarName="Mercedes Vito",BrandId=3,ColourId=2,ModelYear="2016",DailyPrice=400,Description="Siyah Mercedes Vito VIP araç "},
+              new Product{Id=4,CarName="Mercedes C180",BrandId=3,ColourId=3,ModelYear="2017",DailyPrice=750,Description="Gümüş Mercedes C180"},
+              new Product{Id=5,CarName="Hundai  i20",BrandId=4,ColourId=1,ModelYear="2019",DailyPrice=180,Description="Beyaz Hyunai i20 "},
+              new Product{Id=6,CarName="Renault Clio",BrandId=5,ColourId=1,ModelYear="2017",DailyPrice=165,Description="Beyaz Renault Clio"},
+              new Product{Id=7,CarName="VW Polo",BrandId=2,ColourId=1,ModelYear="2005",DailyPrice=150,Description="Beyaz VW Polo"}
 
             };
 
@@ -61,6 +62,7 @@ namespace DataAccess.Concrete.InMemory
         public void Update(Product product)
         {
             Product productToUpdate = _products.SingleOrDefault(p => p.Id == product.Id);
+            productToUpdate.CarName = product.CarName;
             productToUpdate.ModelYear = product.ModelYear;
             productToUpdate.ColourId = product.ColourId;
             productToUpdate.BrandId = product.BrandId;
