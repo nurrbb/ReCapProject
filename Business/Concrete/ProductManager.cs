@@ -16,7 +16,10 @@ namespace Business.Concrete
             _productDal = productdal;
         }
 
-       
+        public static void add()
+        {
+            throw new NotImplementedException();
+        }
 
         public List<Product> GetAll()
         {
